@@ -1,6 +1,6 @@
 const EmailPreview = ({ htmlEmail }) => {
   return (
-    <div className="container mx-auto h-2/6" id="preview-container">
+    <div className="container mx-auto min-h-full h-auto" id="preview-container">
       <h2>Preview</h2>
       <div
         id="preview"
