@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import EmailEditor from './components/EmailEditor';
 import EmailPreview from './components/EmailPreview';
 import RawHtml from './components/RawHtml';
+import EmailTemplater from './components/EmailTemplater';
 
 const App = () => {
   const [htmlEmail, setHtmlEmail] = useState('');
+  const [formattedEmail, setFormattedEmail] = useState('');
+
+  useEffect(() => {
+    setFormattedEmail(EmailTemplater(htmlEmail));
+  }, [htmlEmail]);
 
   // Add specific attributes to certain tags if we need to later
   // const [modifiedHtml, setModifiedHtml] = useState('');
@@ -24,8 +30,8 @@ const App = () => {
       <h1 className="text-center text-3xl py-4">ENB Builder</h1>
       <div className="mx-auto w-full h-min-screen grid grid-cols-2 gap-4">
         <EmailEditor htmlEmail={htmlEmail} setHtmlEmail={setHtmlEmail} />
-        <EmailPreview htmlEmail={htmlEmail} />
-        <RawHtml htmlEmail={htmlEmail} />
+        <EmailPreview htmlEmail={formattedEmail} />
+        <RawHtml htmlEmail={formattedEmail} />
       </div>
     </div>
   );
