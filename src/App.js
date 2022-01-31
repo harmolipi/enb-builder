@@ -6,15 +6,16 @@ import EmailTemplater from './components/EmailTemplater';
 
 const App = () => {
   const [htmlEmail, setHtmlEmail] = useState('');
-  const [emailTitle, setEmailTitle] = useState('');
+  const [bodyTitle, setBodyTitle] = useState('');
+  const [bodyImage, setBodyImage] = useState({ title: '', url: '' });
   const [formattedEmail, setFormattedEmail] = useState('');
 
   useEffect(() => {
-    setFormattedEmail(EmailTemplater(emailTitle, htmlEmail));
+    setFormattedEmail(EmailTemplater(bodyTitle, htmlEmail));
   }, [htmlEmail]);
 
-  const handleHtmlEmailChange = (title) => {
-    setEmailTitle(title);
+  const handleEmailTitleChange = (title) => {
+    setBodyTitle(title);
   };
 
   // Add specific attributes to certain tags if we need to later
@@ -37,8 +38,8 @@ const App = () => {
         <EmailEditor
           htmlEmail={htmlEmail}
           setHtmlEmail={setHtmlEmail}
-          emailTitle={emailTitle}
-          handleHtmlEmailChange={handleHtmlEmailChange}
+          bodyTitle={bodyTitle}
+          handleEmailTitleChange={handleEmailTitleChange}
         />
         <EmailPreview htmlEmail={formattedEmail} />
         <RawHtml htmlEmail={formattedEmail} />
