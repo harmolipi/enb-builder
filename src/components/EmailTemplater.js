@@ -1,4 +1,4 @@
-const EmailTemplater = (leadArticle = '') => {
+const EmailTemplater = (title = '', leadArticle = '') => {
   return `<!DOCTYPE html>
 
   <html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
@@ -141,8 +141,7 @@ const EmailTemplater = (leadArticle = '') => {
                                                               <td style="text-align:center;width:100%;">
                                                                   <h1
                                                                       style="margin: 0; color: #555555; direction: ltr; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 38px; font-weight: normal; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;">
-                                                                      <strong><span style="color: #ce460e;">Follow the
-                                                                              McClanahan Family to Indonesia!
+                                                                      <strong><span style="color: #ce460e;">${title}
                                                                           </span></strong>
                                                                   </h1>
                                                               </td>

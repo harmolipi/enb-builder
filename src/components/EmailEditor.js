@@ -1,51 +1,19 @@
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import '../styles/EmailEditor.css';
+import TitleEditor from './TitleEditor';
+import BodyEditor from './BodyEditor';
 
-const EmailEditor = ({ htmlEmail, setHtmlEmail }) => {
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      [{ color: [] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [
-        { list: 'ordered' },
-        { list: 'bullet' },
-        { indent: '-1' },
-        { indent: '+1' },
-      ],
-      ['link', 'image'],
-      ['clean'],
-    ],
-  };
-
-  const formats = [
-    'header',
-    'color',
-    'bold',
-    'italic',
-    'underline',
-    'strike',
-    'blockquote',
-    'list',
-    'bullet',
-    'indent',
-    'link',
-    'image',
-  ];
-
+const EmailEditor = ({
+  htmlEmail,
+  setHtmlEmail,
+  emailTitle,
+  handleHtmlEmailChange,
+}) => {
   return (
-    <div className="container mx-auto h-96" id="editor-container">
-      <h2>Editor</h2>
-      <ReactQuill
-        className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-        theme="snow"
-        modules={modules}
-        formats={formats}
-        value={htmlEmail}
-        onChange={setHtmlEmail}
-        placeholder="Enter the body of your lead article here."
-      ></ReactQuill>
+    <div
+      className="container mx-auto h-96 overflow-scroll border p-4"
+      id="editor-container"
+    >
+      <TitleEditor title={emailTitle} onChange={handleHtmlEmailChange} />
+      <BodyEditor htmlEmail={htmlEmail} setHtmlEmail={setHtmlEmail} />
     </div>
   );
 };
