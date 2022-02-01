@@ -35,7 +35,7 @@ const BodyEditor = ({ htmlEmail, setHtmlEmail }) => {
   ];
 
   return (
-    <div className="container mx-auto py-3" id="body-editor-container">
+    <div className="container mx-auto my-3" id="body-editor-container">
       <label for="body-editor">Editor</label>
       <ReactQuill
         className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
