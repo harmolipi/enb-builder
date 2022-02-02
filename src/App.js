@@ -8,6 +8,7 @@ const App = () => {
   const [htmlEmail, setHtmlEmail] = useState('');
   const [bodyTitle, setBodyTitle] = useState('');
   const [bodyImage, setBodyImage] = useState({ title: '', url: '' });
+  const [bodyButton, setBodyButton] = useState({ text: '', url: '' });
   const [formattedEmail, setFormattedEmail] = useState('');
 
   useEffect(() => {
@@ -24,6 +25,14 @@ const App = () => {
 
   const handleChangeImageUrl = (url) => {
     setBodyImage({ ...bodyImage, url });
+  };
+
+  const handleChangeButtonText = (text) => {
+    setBodyButton({ ...bodyButton, text });
+  };
+
+  const handleChangeButtonUrl = (url) => {
+    setBodyButton({ ...bodyButton, url });
   };
 
   // Add specific attributes to certain tags if we need to later
@@ -51,6 +60,9 @@ const App = () => {
           handleEmailTitleChange={handleEmailTitleChange}
           handleChangeImageTitle={handleChangeImageTitle}
           handleChangeImageUrl={handleChangeImageUrl}
+          bodyButton={bodyButton}
+          handleChangeButtonText={handleChangeButtonText}
+          handleChangeButtonUrl={handleChangeButtonUrl}
         />
         <EmailPreview htmlEmail={formattedEmail} />
         <RawHtml htmlEmail={formattedEmail} />

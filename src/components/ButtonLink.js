@@ -15,7 +15,7 @@ const ButtonLink = ({
           id="button-url-editor"
           value={buttonLink.url}
           onChange={(e) => handleChangeButtonUrl(e.target.value)}
-          placeholder="Enter the title of your image here."
+          placeholder="Enter the URL of your button here."
         ></input>
         <label for="button-text-editor" className="text-lg text-gray-900">
           Button text
@@ -25,7 +25,7 @@ const ButtonLink = ({
           id="button-text-editor"
           value={buttonLink.text}
           onChange={(e) => handleChangeButtonText(e.target.value)}
-          placeholder="Enter the URL of your image here."
+          placeholder="Enter the text of your button here."
         ></input>
       </div>
     </div>

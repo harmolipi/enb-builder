@@ -1,6 +1,7 @@
 import TitleEditor from './TitleEditor';
 import BodyEditor from './BodyEditor';
 import ImageEditor from './ImageEditor';
+import ButtonLink from './ButtonLink';
 
 const EmailEditor = ({
   htmlEmail,
@@ -10,6 +11,9 @@ const EmailEditor = ({
   bodyImage,
   handleChangeImageTitle,
   handleChangeImageUrl,
+  bodyButton,
+  handleChangeButtonText,
+  handleChangeButtonUrl,
 }) => {
   return (
     <div
@@ -23,6 +27,11 @@ const EmailEditor = ({
         handleChangeImageUrl={handleChangeImageUrl}
       />
       <BodyEditor htmlEmail={htmlEmail} setHtmlEmail={setHtmlEmail} />
+      <ButtonLink
+        bodyButton={bodyButton}
+        handleChangeButtonText={handleChangeButtonText}
+        handleChangeButtonUrl={handleChangeButtonUrl}
+      />
     </div>
   );
 };
