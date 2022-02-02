@@ -12,7 +12,9 @@ const App = () => {
   const [formattedEmail, setFormattedEmail] = useState('');
 
   useEffect(() => {
-    setFormattedEmail(EmailTemplater(bodyTitle, bodyImage, htmlEmail));
+    setFormattedEmail(
+      EmailTemplater(bodyTitle, bodyImage, htmlEmail, bodyButton)
+    );
   }, [htmlEmail]);
 
   const handleEmailTitleChange = (title) => {
