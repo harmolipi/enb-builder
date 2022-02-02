@@ -1,4 +1,8 @@
-const EmailTemplater = (title = '', leadArticle = '') => {
+const EmailTemplater = (
+  title = '',
+  bodyImage = { title: '', url: '' },
+  leadArticle = ''
+) => {
   return `<!DOCTYPE html>
 
   <html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
@@ -176,11 +180,11 @@ const EmailTemplater = (title = '', leadArticle = '') => {
                                                           <tr>
                                                               <td style="width:100%;padding-right:0px;padding-left:0px;">
                                                                   <div align="center" style="line-height:10px"><img
-                                                                          alt="The McClanahan Missionary Family"
+                                                                          alt="${bodyImage.title}"
                                                                           class="big"
-                                                                          src="http://secure.ocmc.org/images/content/pagebuilder/IMG_2580_email.jpg"
+                                                                          src="${bodyImage.url}"
                                                                           style="display: block; height: auto; border: 0; width: 640px; max-width: 100%;"
-                                                                          title="The McClanahan Missionary Family"
+                                                                          title="${bodyImage.title}"
                                                                           width="640" /></div>
                                                               </td>
                                                           </tr>

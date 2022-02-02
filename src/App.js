@@ -11,11 +11,19 @@ const App = () => {
   const [formattedEmail, setFormattedEmail] = useState('');
 
   useEffect(() => {
-    setFormattedEmail(EmailTemplater(bodyTitle, htmlEmail));
+    setFormattedEmail(EmailTemplater(bodyTitle, bodyImage, htmlEmail));
   }, [htmlEmail]);
 
   const handleEmailTitleChange = (title) => {
     setBodyTitle(title);
+  };
+
+  const handleChangeImageTitle = (title) => {
+    setBodyImage({ ...bodyImage, title });
+  };
+
+  const handleChangeImageUrl = (url) => {
+    setBodyImage({ ...bodyImage, url });
   };
 
   // Add specific attributes to certain tags if we need to later
@@ -39,7 +47,10 @@ const App = () => {
           htmlEmail={htmlEmail}
           setHtmlEmail={setHtmlEmail}
           bodyTitle={bodyTitle}
+          bodyImage={bodyImage}
           handleEmailTitleChange={handleEmailTitleChange}
+          handleChangeImageTitle={handleChangeImageTitle}
+          handleChangeImageUrl={handleChangeImageUrl}
         />
         <EmailPreview htmlEmail={formattedEmail} />
         <RawHtml htmlEmail={formattedEmail} />
