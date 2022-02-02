@@ -1,7 +1,7 @@
 const TitleEditor = ({ title, onChange }) => {
   return (
     <div className="container mx-auto pb-3" id="title-editor-container">
-      <label for="title-editor" className="text-xl">
+      <label htmlFor="title-editor" className="text-xl">
         Title
       </label>
       <input

@@ -7,7 +7,7 @@ const ImageEditor = ({
     <div className="container mx-auto my-3" id="image-editor-container">
       <h2 className="text-xl">Image</h2>
       <div className="pl-4">
-        <label for="image-title-editor" className="text-lg text-gray-900">
+        <label htmlFor="image-title-editor" className="text-lg text-gray-900">
           Image title
         </label>
         <input
@@ -17,7 +17,7 @@ const ImageEditor = ({
           onChange={(e) => handleChangeImageTitle(e.target.value)}
           placeholder="Enter the title of your image here."
         ></input>
-        <label for="image-url-editor" className="text-lg text-gray-900">
+        <label htmlFor="image-url-editor" className="text-lg text-gray-900">
           Image title
         </label>
         <input
