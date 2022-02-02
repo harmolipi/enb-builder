@@ -21,12 +21,15 @@ const EmailEditor = ({
       id="editor-container"
     >
       <TitleEditor title={emailTitle} onChange={handleEmailTitleChange} />
+      <hr />
       <ImageEditor
         bodyImage={bodyImage}
         handleChangeImageTitle={handleChangeImageTitle}
         handleChangeImageUrl={handleChangeImageUrl}
       />
+      <hr />
       <BodyEditor htmlEmail={htmlEmail} setHtmlEmail={setHtmlEmail} />
+      <hr />
       <ButtonLink
         bodyButton={bodyButton}
         handleChangeButtonText={handleChangeButtonText}
