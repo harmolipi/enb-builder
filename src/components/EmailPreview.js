@@ -1,6 +1,9 @@
 const EmailPreview = ({ htmlEmail }) => {
   return (
-    <div className="container mx-auto h-96" id="preview-container">
+    <div
+      className="container mx-auto h-96 border p-4 overflow-hidden"
+      id="preview-container"
+    >
       <h2>Preview</h2>
       <div
         id="preview"
