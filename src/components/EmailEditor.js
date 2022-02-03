@@ -2,6 +2,7 @@ import TitleEditor from './TitleEditor';
 import BodyEditor from './BodyEditor';
 import ImageEditor from './ImageEditor';
 import ButtonLink from './ButtonLink';
+import FeatureContainer from './FeatureContainer';
 
 const EmailEditor = ({
   htmlEmail,
@@ -14,6 +15,13 @@ const EmailEditor = ({
   bodyButton,
   handleChangeButtonText,
   handleChangeButtonUrl,
+  featureItems,
+  handleFeatureItemTitle,
+  handleFeatureItemDescription,
+  handleFeatureItemImageTitle,
+  handleFeatureItemImageUrl,
+  addFeatureItem,
+  removeFeatureItem,
 }) => {
   return (
     <div
@@ -34,6 +42,16 @@ const EmailEditor = ({
         bodyButton={bodyButton}
         handleChangeButtonText={handleChangeButtonText}
         handleChangeButtonUrl={handleChangeButtonUrl}
+      />
+      <hr />
+      <FeatureContainer
+        featureItems={featureItems}
+        handleFeatureItemTitle={handleFeatureItemTitle}
+        handleFeatureItemDescription={handleFeatureItemDescription}
+        handleFeatureItemImageTitle={handleFeatureItemImageTitle}
+        handleFeatureItemImageUrl={handleFeatureItemImageUrl}
+        addFeatureItem={addFeatureItem}
+        removeFeatureItem={removeFeatureItem}
       />
     </div>
   );
