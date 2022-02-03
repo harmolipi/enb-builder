@@ -10,6 +10,7 @@ const App = () => {
   const [bodyImage, setBodyImage] = useState({ title: '', url: '' });
   const [bodyButton, setBodyButton] = useState({ text: '', url: '' });
   const [formattedEmail, setFormattedEmail] = useState('');
+  const [featureItems, setFeatureItems] = useState([]);
 
   useEffect(() => {
     setFormattedEmail(
@@ -35,6 +36,61 @@ const App = () => {
 
   const handleChangeButtonUrl = (url) => {
     setBodyButton({ ...bodyButton, url });
+  };
+
+  const addFeatureItem = () => {
+    setFeatureItems([
+      ...featureItems,
+      { title: '', description: '', image: { title: '', url: '' } },
+    ]);
+  };
+
+  const handleFeatureItemTitle = (index, title) => {
+    setFeatureItems(
+      featureItems.map((item, i) => {
+        if (i === index) {
+          return { ...item, title };
+        }
+        return item;
+      })
+    );
+  };
+
+  const handleFeatureItemDescription = (index, description) => {
+    setFeatureItems(
+      featureItems.map((item, i) => {
+        if (i === index) {
+          return { ...item, description };
+        }
+        return item;
+      })
+    );
+  };
+
+  const handleFeatureItemImageTitle = (index, title) => {
+    setFeatureItems(
+      featureItems.map((item, i) => {
+        if (i === index) {
+          return { ...item, image: { ...item.image, title } };
+        }
+        return item;
+      })
+    );
+  };
+
+  const handleFeatureItemImageUrl = (index, url) => {
+    setFeatureItems(
+      featureItems.map((item, i) => {
+        if (i === index) {
+          return { ...item, image: { ...item.image, url } };
+        }
+        return item;
+      })
+    );
+  };
+
+  const removeFeatureItem = (index) => {
+    setFeatureItems(featureItems.filter((item, i) => i !== index));
   };
 
   // Add specific attributes to certain tags if we need to later
@@ -65,6 +121,13 @@ const App = () => {
           bodyButton={bodyButton}
           handleChangeButtonText={handleChangeButtonText}
           handleChangeButtonUrl={handleChangeButtonUrl}
+          addFeatureItem={addFeatureItem}
+          removeFeatureItem={removeFeatureItem}
+          handleFeatureItemTitle={handleFeatureItemTitle}
+          handleFeatureItemDescription={handleFeatureItemDescription}
+          handleFeatureItemImageTitle={handleFeatureItemImageTitle}
+          handleFeatureItemImageUrl={handleFeatureItemImageUrl}
+          featureItems={featureItems}
         />
         <EmailPreview htmlEmail={formattedEmail} />
         <RawHtml htmlEmail={formattedEmail} />
