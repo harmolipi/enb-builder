@@ -12,11 +12,11 @@ const App = () => {
   const [formattedEmail, setFormattedEmail] = useState('');
   const [featureItems, setFeatureItems] = useState([]);
 
-  useEffect(() => {
-    setFormattedEmail(
-      EmailTemplater(bodyTitle, bodyImage, htmlEmail, bodyButton)
-    );
-  }, [htmlEmail]);
+  // useEffect(() => {
+  //   setFormattedEmail(
+  //     EmailTemplater(bodyTitle, bodyImage, htmlEmail, bodyButton, featureItems)
+  //   );
+  // }, [htmlEmail]);
 
   const handleEmailTitleChange = (title) => {
     setBodyTitle(title);
@@ -129,7 +129,13 @@ const App = () => {
           handleFeatureItemImageUrl={handleFeatureItemImageUrl}
           featureItems={featureItems}
         />
-        <EmailPreview htmlEmail={formattedEmail} />
+        <EmailPreview
+          bodyTitle={bodyTitle}
+          bodyImage={bodyImage}
+          htmlEmail={htmlEmail}
+          bodyButton={bodyButton}
+          featureItems={featureItems}
+        />
         <RawHtml htmlEmail={formattedEmail} />
       </div>
     </div>
