@@ -74,7 +74,7 @@ const FeatureContainer = ({
             Title
           </label>
           <input
-            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
             id={`feature-title-editor-${index}`}
             key={`feature-title-editor-${index}`}
             value={item.title}
@@ -88,7 +88,7 @@ const FeatureContainer = ({
             Description
           </label>
           <ReactQuill
-            className="w-full h-48 px-3 py-2 text-gray-700 border rounded-lg focus:outline-none active:border-gray-800"
+            className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
             id={`feature-description-editor-${index}`}
             key={`feature-description-editor-${index}`}
             theme="snow"
@@ -105,7 +105,7 @@ const FeatureContainer = ({
             Image title
           </label>
           <input
-            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
             id={`feature-image-title-editor-${index}`}
             key={`feature-image-title-editor-${index}`}
             value={item.image.title}
@@ -119,7 +119,7 @@ const FeatureContainer = ({
             Image URL
           </label>
           <input
-            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
             id={`feature-image-url-editor-${index}`}
             key={`feature-image-url-editor-${index}`}
             value={item.image.url}
@@ -133,7 +133,7 @@ const FeatureContainer = ({
             Button text
           </label>
           <input
-            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
             id={`feature-button-text-editor-${index}`}
             key={`feature-button-text-editor-${index}`}
             value={item.button.text}
@@ -147,7 +147,7 @@ const FeatureContainer = ({
             Button URL
           </label>
           <input
-            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800 transition-colors"
             id={`feature-button-url-editor-${index}`}
             key={`feature-button-url-editor-${index}`}
             value={item.button.url}
