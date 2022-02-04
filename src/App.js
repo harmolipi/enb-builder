@@ -41,7 +41,12 @@ const App = () => {
   const addFeatureItem = () => {
     setFeatureItems([
       ...featureItems,
-      { title: '', description: '', image: { title: '', url: '' } },
+      {
+        title: '',
+        description: '',
+        image: { title: '', url: '' },
+        button: { text: '', url: '' },
+      },
     ]);
   };
 
@@ -89,6 +94,28 @@ const App = () => {
     );
   };
 
+  const handleFeatureItemButtonText = (index, text) => {
+    setFeatureItems(
+      featureItems.map((item, i) => {
+        if (i === index) {
+          return { ...item, button: { ...item.button, text } };
+        }
+        return item;
+      })
+    );
+  };
+
+  const handleFeatureItemButtonUrl = (index, url) => {
+    setFeatureItems(
+      featureItems.map((item, i) => {
+        if (i === index) {
+          return { ...item, button: { ...item.button, url } };
+        }
+        return item;
+      })
+    );
+  };
+
   const removeFeatureItem = (index) => {
     setFeatureItems(featureItems.filter((item, i) => i !== index));
   };
@@ -127,6 +154,8 @@ const App = () => {
           handleFeatureItemDescription={handleFeatureItemDescription}
           handleFeatureItemImageTitle={handleFeatureItemImageTitle}
           handleFeatureItemImageUrl={handleFeatureItemImageUrl}
+          handleFeatureItemButtonText={handleFeatureItemButtonText}
+          handleFeatureItemButtonUrl={handleFeatureItemButtonUrl}
           featureItems={featureItems}
         />
         <EmailPreview
@@ -136,7 +165,7 @@ const App = () => {
           bodyButton={bodyButton}
           featureItems={featureItems}
           formattedEmail={formattedEmail}
-          setFormattedEmail={setFormattedEmail}
+          setEmail={(emailContents) => setFormattedEmail(emailContents)}
         />
         <RawHtml htmlEmail={formattedEmail} />
       </div>

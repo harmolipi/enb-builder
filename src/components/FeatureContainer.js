@@ -11,6 +11,8 @@ const FeatureContainer = ({
   handleFeatureItemDescription,
   handleFeatureItemImageTitle,
   handleFeatureItemImageUrl,
+  handleFeatureItemButtonText,
+  handleFeatureItemButtonUrl,
 }) => {
   const featureItemsList = featureItems.map((item, index) => {
     return (
@@ -89,6 +91,34 @@ const FeatureContainer = ({
             value={item.image.url}
             onChange={(e) => handleFeatureItemImageUrl(index, e.target.value)}
             placeholder="Enter the url of your feature item's image here."
+          ></input>
+          <label
+            htmlFor={`feature-button-text-editor-${index}`}
+            className="text-lg text-gray-900"
+          >
+            Button text
+          </label>
+          <input
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+            id={`feature-button-text-editor-${index}`}
+            key={`feature-button-text-editor-${index}`}
+            value={item.button.text}
+            onChange={(e) => handleFeatureItemButtonText(index, e.target.value)}
+            placeholder="Enter the text of your feature item's button here."
+          ></input>
+          <label
+            htmlFor={`feature-button-url-editor-${index}`}
+            className="text-lg text-gray-900"
+          >
+            Button URL
+          </label>
+          <input
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+            id={`feature-button-url-editor-${index}`}
+            key={`feature-button-url-editor-${index}`}
+            value={item.button.url}
+            onChange={(e) => handleFeatureItemButtonUrl(index, e.target.value)}
+            placeholder="Enter the url of your feature item's button here."
           ></input>
         </div>
       </div>
