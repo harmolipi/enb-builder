@@ -4,4 +4,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  content: ['./src/**/*.js'],
 };
