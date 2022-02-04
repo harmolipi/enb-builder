@@ -1,4 +1,5 @@
 import { uid } from 'react-uid';
+import { useEffect } from 'react';
 
 const EmailPreview = ({
   bodyTitle,
@@ -7,7 +8,7 @@ const EmailPreview = ({
   bodyButton,
   featureItems,
   formattedEmail,
-  setFormattedEmail,
+  setEmail,
 }) => {
   const featureHeading = `
     <table
@@ -283,9 +284,7 @@ const EmailPreview = ({
       )}
     </div>`;
 
-  // const email = `
-  setFormattedEmail(`
-  <!DOCTYPE html>
+  const email = `<!DOCTYPE html>
     <html
       lang="en"
       xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -1777,11 +1776,15 @@ const EmailPreview = ({
         </table>
         <!--[if (IE)]></div><![endif]-->
       </body>
-    </html>`);
+    </html>`;
+
+  useEffect(() => {
+    setEmail(email);
+  }, [email, setEmail]);
 
   return (
     <div
-      className="container mx-auto h-96 border p-4 overflow-hidden"
+      className="container mx-auto h-96 border p-4 overflow-hidden border-slate-500"
       id="preview-container"
     >
       <h2>Preview</h2>
