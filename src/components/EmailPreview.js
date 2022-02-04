@@ -1,5 +1,7 @@
 import { uid } from 'react-uid';
 import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExpand } from '@fortawesome/free-solid-svg-icons';
 
 const EmailPreview = ({
   bodyTitle,
@@ -9,6 +11,9 @@ const EmailPreview = ({
   featureItems,
   formattedEmail,
   setEmail,
+  fullEditor,
+  fullPreview,
+  handleToggleFullPreview,
 }) => {
   const featureHeading = `
     <table
@@ -1799,10 +1804,23 @@ const EmailPreview = ({
 
   return (
     <div
-      className="container mx-auto h-96 border p-4 overflow-hidden border-slate-500"
+      className={`container mx-auto h-96 border p-4 overflow-hidden border-slate-500 relative ${
+        fullPreview ? 'col-span-2' : 'col-span-1'
+      } ${fullEditor ? 'hidden' : ''}`}
       id="preview-container"
     >
       <h2>Preview</h2>
+      <button
+        className="absolute right-3 top-3"
+        onClick={handleToggleFullPreview}
+      >
+        <FontAwesomeIcon
+          icon={faExpand}
+          className={`relative text-xl ${
+            fullPreview ? 'text-sky-700' : 'text-sky-500'
+          }`}
+        />
+      </button>
       <div
         id="preview"
         className="unreset prose w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none overflow-scroll"

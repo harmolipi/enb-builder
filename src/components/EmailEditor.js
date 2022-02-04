@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExpand } from '@fortawesome/free-solid-svg-icons';
 import TitleEditor from './TitleEditor';
 import BodyEditor from './BodyEditor';
 import ImageEditor from './ImageEditor';
@@ -24,12 +26,28 @@ const EmailEditor = ({
   handleFeatureItemButtonUrl,
   addFeatureItem,
   removeFeatureItem,
+  fullEditor,
+  fullPreview,
+  handleToggleFullEditor,
 }) => {
   return (
     <div
-      className="container mx-auto h-96 overflow-scroll border border-slate-500 p-4"
+      className={`container mx-auto h-96 overflow-scroll border border-slate-500 p-4 relative ${
+        fullEditor ? 'col-span-2' : 'col-span-1'
+      } ${fullPreview ? 'hidden' : ''}`}
       id="editor-container"
     >
+      <button
+        className="absolute right-3 top-3"
+        onClick={handleToggleFullEditor}
+      >
+        <FontAwesomeIcon
+          icon={faExpand}
+          className={`relative text-xl ${
+            fullEditor ? 'text-sky-700' : 'text-sky-500'
+          }`}
+        />
+      </button>
       <TitleEditor title={emailTitle} onChange={handleEmailTitleChange} />
       <hr />
       <ImageEditor
