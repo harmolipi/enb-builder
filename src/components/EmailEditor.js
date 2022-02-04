@@ -20,6 +20,8 @@ const EmailEditor = ({
   handleFeatureItemDescription,
   handleFeatureItemImageTitle,
   handleFeatureItemImageUrl,
+  handleFeatureItemButtonText,
+  handleFeatureItemButtonUrl,
   addFeatureItem,
   removeFeatureItem,
 }) => {
@@ -50,6 +52,8 @@ const EmailEditor = ({
         handleFeatureItemDescription={handleFeatureItemDescription}
         handleFeatureItemImageTitle={handleFeatureItemImageTitle}
         handleFeatureItemImageUrl={handleFeatureItemImageUrl}
+        handleFeatureItemButtonText={handleFeatureItemButtonText}
+        handleFeatureItemButtonUrl={handleFeatureItemButtonUrl}
         addFeatureItem={addFeatureItem}
         removeFeatureItem={removeFeatureItem}
       />
