@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import EmailEditor from './components/EmailEditor';
 import EmailPreview from './components/EmailPreview';
 import RawHtml from './components/RawHtml';
-import EmailTemplater from './components/EmailTemplater';
 
 const App = () => {
   const [htmlEmail, setHtmlEmail] = useState('');
@@ -11,12 +10,6 @@ const App = () => {
   const [bodyButton, setBodyButton] = useState({ text: '', url: '' });
   const [formattedEmail, setFormattedEmail] = useState('');
   const [featureItems, setFeatureItems] = useState([]);
-
-  // useEffect(() => {
-  //   setFormattedEmail(
-  //     EmailTemplater(bodyTitle, bodyImage, htmlEmail, bodyButton, featureItems)
-  //   );
-  // }, [htmlEmail]);
 
   const handleEmailTitleChange = (title) => {
     setBodyTitle(title);
@@ -61,7 +54,7 @@ const App = () => {
     );
   };
 
-  const handleFeatureItemDescription = (index, description) => {
+  const handleFeatureItemDescription = (description, index) => {
     setFeatureItems(
       featureItems.map((item, i) => {
         if (i === index) {
@@ -119,19 +112,6 @@ const App = () => {
   const removeFeatureItem = (index) => {
     setFeatureItems(featureItems.filter((item, i) => i !== index));
   };
-
-  // Add specific attributes to certain tags if we need to later
-  // const [modifiedHtml, setModifiedHtml] = useState('');
-  // useEffect(() => {
-  //   setModifiedHtml(modifyHtml(htmlEmail));
-  // }, [htmlEmail]);
-
-  // const modifyHtml = (html) => {
-  //   return html.replaceAll(
-  //     '<p>',
-  //     '<p style="margin: 0; font-size: 16px; text-align: justify; mso-line-height-alt: 24px;">'
-  //   );
-  // };
 
   return (
     <div className="App container mx-auto mt-4">

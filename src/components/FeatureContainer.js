@@ -2,6 +2,8 @@ import { uid } from 'react-uid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const FeatureContainer = ({
   featureItems,
@@ -14,6 +16,37 @@ const FeatureContainer = ({
   handleFeatureItemButtonText,
   handleFeatureItemButtonUrl,
 }) => {
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      [{ color: [] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [
+        { list: 'ordered' },
+        { list: 'bullet' },
+        { indent: '-1' },
+        { indent: '+1' },
+      ],
+      ['link', 'image'],
+      ['clean'],
+    ],
+  };
+
+  const formats = [
+    'header',
+    'color',
+    'bold',
+    'italic',
+    'underline',
+    'strike',
+    'blockquote',
+    'list',
+    'bullet',
+    'indent',
+    'link',
+    'image',
+  ];
+
   const featureItemsList = featureItems.map((item, index) => {
     return (
       <div
@@ -54,16 +87,17 @@ const FeatureContainer = ({
           >
             Description
           </label>
-          <input
-            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+          <ReactQuill
+            className="w-full h-48 px-3 py-2 text-gray-700 border rounded-lg focus:outline-none active:border-gray-800"
             id={`feature-description-editor-${index}`}
             key={`feature-description-editor-${index}`}
+            theme="snow"
+            modules={modules}
+            formats={formats}
             value={item.description}
-            onChange={(e) =>
-              handleFeatureItemDescription(index, e.target.value)
-            }
+            onChange={(e) => handleFeatureItemDescription(e, index)}
             placeholder="Enter the description of your feature item here."
-          ></input>
+          ></ReactQuill>
           <label
             htmlFor={`feature-image-title-editor-${index}`}
             className="text-lg text-gray-900"
