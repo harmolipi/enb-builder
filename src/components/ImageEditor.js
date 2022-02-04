@@ -18,7 +18,7 @@ const ImageEditor = ({
           placeholder="Enter the title of your image here."
         ></input>
         <label htmlFor="image-url-editor" className="text-lg text-gray-900">
-          Image title
+          Image url
         </label>
         <input
           className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
