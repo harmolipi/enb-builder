@@ -9,7 +9,7 @@ import FeatureContainer from './FeatureContainer';
 const EmailEditor = ({
   htmlEmail,
   setHtmlEmail,
-  emailTitle,
+  bodyTitle,
   handleEmailTitleChange,
   bodyImage,
   handleChangeImageTitle,
@@ -48,7 +48,10 @@ const EmailEditor = ({
           }`}
         />
       </button>
-      <TitleEditor title={emailTitle} onChange={handleEmailTitleChange} />
+      <TitleEditor
+        bodyTitle={bodyTitle}
+        handleEmailTitleChange={handleEmailTitleChange}
+      />
       <hr />
       <ImageEditor
         bodyImage={bodyImage}
