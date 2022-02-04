@@ -258,14 +258,12 @@ const EmailPreview = ({
                             <tr>
                               <td>
                                 <div align="center">
-                                  ${`<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://myocn.net/lets-talk-live-forged-and-woven/" style="height:42px;width:308px;v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#febe10"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#000000; font-family:Tahoma, sans-serif; font-size:16px"><![endif]--><a
-                                                                          href="https://myocn.net/lets-talk-live-forged-and-woven/"
+                                  ${`<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${item.button.url}" style="height:42px;width:308px;v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#febe10"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#000000; font-family:Tahoma, sans-serif; font-size:16px"><![endif]--><a
+                                                                          href="${item.button.url}"
                                                                           style="text-decoration:none;display:inline-block;color:#000000;background-color:#febe10;border-radius:4px;width:auto;border-top:1px solid #febe10;border-right:1px solid #febe10;border-bottom:1px solid #febe10;border-left:1px solid #febe10;padding-top:5px;padding-bottom:5px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"
                                                                           target="_blank"><span
                                                                               style="padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;letter-spacing:normal;"><span
-                                                                                  style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><strong>Let’s
-                                                                                      Talk Live: Forged and
-                                                                                      Woven</strong></span></span></a>
+                                                                                  style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><strong>${item.button.text}</strong></span></span></a>
                                                                       <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->`}
                                 </div>
                               </td>
