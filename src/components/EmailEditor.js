@@ -25,7 +25,7 @@ const EmailEditor = ({
 }) => {
   return (
     <div
-      className="container mx-auto h-96 overflow-scroll border p-4"
+      className="container mx-auto h-96 overflow-scroll border border-slate-500 p-4"
       id="editor-container"
     >
       <TitleEditor title={emailTitle} onChange={handleEmailTitleChange} />
