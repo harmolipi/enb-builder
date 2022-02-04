@@ -5,7 +5,7 @@ const TitleEditor = ({ title, onChange }) => {
         Title
       </label>
       <input
-        className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+        className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
         id="title-editor"
         value={title}
         onChange={(e) => onChange(e.target.value)}
