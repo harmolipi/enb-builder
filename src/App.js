@@ -114,9 +114,9 @@ const App = () => {
   };
 
   return (
-    <div className="App container mx-auto mt-4">
+    <div className="App w-full mt-4">
       <h1 className="text-center text-3xl py-4">ENB Builder</h1>
-      <div className="mx-auto w-full h-min-screen grid grid-cols-2 gap-4">
+      <div className="mx-auto w-11/12 h-min-screen grid grid-cols-2 gap-4">
         <EmailEditor
           htmlEmail={htmlEmail}
           setHtmlEmail={setHtmlEmail}
