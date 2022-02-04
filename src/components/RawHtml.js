@@ -1,12 +1,16 @@
+import { CopyBlock, dracula } from 'react-code-blocks';
+
 const RawHtml = ({ htmlEmail }) => {
   return (
-    <div className="container mx-auto mt-5 col-span-2" id="raw-html">
-      <h2>Raw HTML</h2>
-      <textarea
+    <div
+      className="container mx-auto mt-5 col-span-2 h-32 overflow-scroll rounded-md"
+      id="raw-html"
+    >
+      <CopyBlock
         id="raw-html-textarea"
-        className="font-mono w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-        value={htmlEmail}
-        readOnly={true}
+        text={htmlEmail}
+        language="html"
+        theme={dracula}
       />
     </div>
   );
