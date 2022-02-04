@@ -135,6 +135,8 @@ const App = () => {
           htmlEmail={htmlEmail}
           bodyButton={bodyButton}
           featureItems={featureItems}
+          formattedEmail={formattedEmail}
+          setFormattedEmail={setFormattedEmail}
         />
         <RawHtml htmlEmail={formattedEmail} />
       </div>

@@ -6,6 +6,8 @@ const EmailPreview = ({
   htmlEmail,
   bodyButton,
   featureItems,
+  formattedEmail,
+  setFormattedEmail,
 }) => {
   const featureHeading = `
     <table
@@ -281,8 +283,9 @@ const EmailPreview = ({
       )}
     </div>`;
 
-  const email = ` <!DOCTYPE html>
-
+  // const email = `
+  setFormattedEmail(`
+  <!DOCTYPE html>
     <html
       lang="en"
       xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -1774,7 +1777,8 @@ const EmailPreview = ({
         </table>
         <!--[if (IE)]></div><![endif]-->
       </body>
-    </html>`;
+    </html>`);
+
   return (
     <div
       className="container mx-auto h-96 border p-4 overflow-hidden"
@@ -1785,7 +1789,7 @@ const EmailPreview = ({
         id="preview"
         className="unreset prose w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none overflow-scroll"
         rows="6"
-        dangerouslySetInnerHTML={{ __html: email }}
+        dangerouslySetInnerHTML={{ __html: formattedEmail }}
       ></div>
     </div>
   );
