@@ -101,8 +101,9 @@ const EmailPreview = ({
 
   const features = `
     <div class="feature-container">
-      ${featureItems.map(
-        (item) => `
+      ${featureItems
+        .map(
+          (item) => `
         <div class="feature-item" key=${uid(item)}>
           <table
             align="center"
@@ -279,7 +280,8 @@ const EmailPreview = ({
           </table>
         </div>
       `
-      )}
+        )
+        .join('')}
     </div>`;
 
   const email = `<!DOCTYPE html>
