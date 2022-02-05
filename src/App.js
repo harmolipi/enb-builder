@@ -114,7 +114,7 @@ const App = () => {
 
   const removeFeatureItem = (index) => {
     setFeatureItems(featureItems.filter((item, i) => i !== index));
-  };
+  };\
 
   const handleToggleFullEditor = () => {
     setFullPreview(false);
