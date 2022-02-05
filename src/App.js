@@ -12,6 +12,7 @@ const App = () => {
   const [featureItems, setFeatureItems] = useState([]);
   const [fullEditor, setFullEditor] = useState(false);
   const [fullPreview, setFullPreview] = useState(false);
+  const [showHTML, setShowHTML] = useState(false);
 
   const handleEmailTitleChange = (title) => {
     setBodyTitle(title);
@@ -125,6 +126,10 @@ const App = () => {
     setFullPreview(!fullPreview);
   };
 
+  const handleToggleShowHTML = () => {
+    setShowHTML((currentShowHTML) => !currentShowHTML);
+  };
+
   return (
     <div className="App w-full mt-4">
       <h1 className="text-center text-3xl py-4">ENB Builder</h1>
@@ -175,8 +180,26 @@ const App = () => {
         ) : (
           () => null
         )}
-
-        <RawHtml htmlEmail={formattedEmail} />
+        {showHTML ? (
+          <div id="visible-html" class="col-span-2">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleToggleShowHTML}
+            >
+              Hide HTML
+            </button>
+            <RawHtml htmlEmail={formattedEmail} />
+          </div>
+        ) : (
+          <div id="hidden-html">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleToggleShowHTML}
+            >
+              Show HTML
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
