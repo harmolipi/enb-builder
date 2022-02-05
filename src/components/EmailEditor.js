@@ -32,7 +32,7 @@ const EmailEditor = ({
 }) => {
   return (
     <div
-      className={`container mx-auto h-96 overflow-scroll border border-slate-500 p-4 relative ${
+      className={`container mx-auto overflow-scroll border border-slate-500 p-4 relative ${
         fullEditor ? 'col-span-2' : 'col-span-1'
       } ${fullPreview ? 'hidden' : ''}`}
       id="editor-container"

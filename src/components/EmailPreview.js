@@ -1804,7 +1804,7 @@ const EmailPreview = ({
 
   return (
     <div
-      className={`container mx-auto h-96 border p-4 overflow-hidden border-slate-500 relative ${
+      className={`container mx-auto border p-4 overflow-hidden border-slate-500 relative ${
         fullPreview ? 'col-span-2' : 'col-span-1'
       } ${fullEditor ? 'hidden' : ''}`}
       id="preview-container"
