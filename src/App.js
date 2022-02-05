@@ -118,16 +118,16 @@ const App = () => {
 
   const handleToggleFullEditor = () => {
     setFullPreview(false);
-    setFullEditor(!fullEditor);
+    setFullEditor((prevFullEditor) => !prevFullEditor);
   };
 
   const handleToggleFullPreview = () => {
     setFullEditor(false);
-    setFullPreview(!fullPreview);
+    setFullPreview((prevFullPreview) => !prevFullPreview);
   };
 
   const handleToggleShowHTML = () => {
-    setShowHTML((currentShowHTML) => !currentShowHTML);
+    setShowHTML((prevShowHTML) => !prevShowHTML);
   };
 
   return (
