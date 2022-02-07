@@ -455,7 +455,7 @@ const EmailPreview = ({
                                           target="_blank"
                                           ><img
                                             alt="Orthodox Christian Mission Center"
-                                            src="http://secure.ocmc.org/images/content/pagebuilder/Red-on-White_-_higher_res.png"
+                                            src="https://secure.ocmc.org/images/content/pagebuilder/Red-on-White_-_higher_res.png"
                                             style="display: block; height: auto; border: 0; width: 320px; max-width: 100%;"
                                             title="Orthodox Christian Mission Center"
                                             width="320"
@@ -1154,7 +1154,7 @@ const EmailPreview = ({
       display: block;
       "
                                   title="Orthodox Christian Mission Center"
-                                  src="http://secure.ocmc.org/images/content/pagebuilder/Red-on-White_-_higher_res.png"
+                                  src="https://secure.ocmc.org/images/content/pagebuilder/Red-on-White_-_higher_res.png"
                                   border="0"
                                   alt="Orthodox Christian Mission Center"
                                   width="320"
@@ -1441,7 +1441,7 @@ const EmailPreview = ({
       display: block;
       "
                                                 title="facebook"
-                                                src="http://secure.ocmc.org/images/content/pagebuilder/facebook2x.png"
+                                                src="https://secure.ocmc.org/images/content/pagebuilder/facebook2x.png"
                                                 alt="Facebook"
                                                 width="32"
                                                 height="32"
@@ -1469,7 +1469,7 @@ const EmailPreview = ({
       display: block;
       "
                                                 title="twitter"
-                                                src="http://secure.ocmc.org/images/content/pagebuilder/twitter2x.png"
+                                                src="https://secure.ocmc.org/images/content/pagebuilder/twitter2x.png"
                                                 alt="Twitter"
                                                 width="32"
                                                 height="32"
@@ -1497,7 +1497,7 @@ const EmailPreview = ({
       display: block;
       "
                                                 title="linkedin"
-                                                src="http://secure.ocmc.org/images/content/pagebuilder/linkedin2x.png"
+                                                src="https://secure.ocmc.org/images/content/pagebuilder/linkedin2x.png"
                                                 alt="Linkedin"
                                                 width="32"
                                                 height="32"
@@ -1525,7 +1525,7 @@ const EmailPreview = ({
       display: block;
       "
                                                 title="instagram"
-                                                src="http://secure.ocmc.org/images/content/pagebuilder/instagram2x.png"
+                                                src="https://secure.ocmc.org/images/content/pagebuilder/instagram2x.png"
                                                 alt="Instagram"
                                                 width="32"
                                                 height="32"
@@ -1732,7 +1732,7 @@ const EmailPreview = ({
       color: #406784;
       "
                                         rel="noopener"
-                                        href="http://secure.ocmc.org/site/CO"
+                                        href="https://secure.ocmc.org/site/CO"
                                         target="_blank"
                                         >unsubscribe</a
                                       ></span
@@ -1752,7 +1752,7 @@ const EmailPreview = ({
                                   <a
                                     style="color: #406784"
                                     rel="noopener noreferrer"
-                                    href="http://secure.ocmc.org/site/MessageViewer"
+                                    href="https://secure.ocmc.org/site/MessageViewer"
                                     target="_blank"
                                     data-auth="NotApplicable"
                                     >View this email in your browser.</a
@@ -1770,7 +1770,7 @@ const EmailPreview = ({
                                   <a
                                     style="color: #406784"
                                     rel="noopener noreferrer"
-                                    href="http://secure.ocmc.org/site/TellAFriend"
+                                    href="https://secure.ocmc.org/site/TellAFriend"
                                     target="_blank"
                                     data-auth="NotApplicable"
                                     >Forward this email to a friend.</a
