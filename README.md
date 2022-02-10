@@ -8,7 +8,7 @@ At work, one of my tasks is to assemble and send out email news bulletins every 
   - Lead article image
   - Lead article body
   - Lead article action button (optional)
-- 0-3 sub-items, each including:
+- A few sub-items, each including:
   - Sub-item title
   - Sub-item image
   - Sub-item body
@@ -19,6 +19,9 @@ Until now, every week, I've just been copying/pasting the previous week's email'
 But now, I decided to come up with a better way. I'm about to be out of the office for a couple weeks, and need to train someone else to handle this while I'm gone. Because the prospect of showing them my current workflow is so intimidating, I figured it would be easier to just create a purpose-made editor with react, where the above elements can just be pasted in, and will appear in both a preview element, and in a textbox as HTML they can paste into our email sending service.
 
 Also, this is just a good project to practice using what I've been learning.
+
+## Usage
+Go to https://harmolipi.github.io/enb-builder/ and fill out the fields as needed. Preview will update as you type. You can click to maximize either of those panes, and data will be stored in your browser's localStorage so it's likely not lost if you close the page. When you're ready, click "Show HTML" at the bottom and click to copy that HTML into the body of the email elsewhere.
 
 ## Setup
 ```console
