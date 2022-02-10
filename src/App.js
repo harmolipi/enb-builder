@@ -1,18 +1,72 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import EmailEditor from './components/EmailEditor';
 import EmailPreview from './components/EmailPreview';
 import RawHtml from './components/RawHtml';
 
 const App = () => {
-  const [htmlEmail, setHtmlEmail] = useState('');
-  const [bodyTitle, setBodyTitle] = useState('');
-  const [bodyImage, setBodyImage] = useState({ title: '', url: '' });
-  const [bodyButton, setBodyButton] = useState({ text: '', url: '' });
+  const [htmlEmail, setHtmlEmail] = useState(() => {
+    return localStorage.getItem('htmlEmail') === 'undefined'
+      ? ''
+      : localStorage.getItem('htmlEmail');
+  });
+  const [bodyTitle, setBodyTitle] = useState(() => {
+    return localStorage.getItem('bodyTitle') === 'undefined'
+      ? ''
+      : localStorage.getItem('bodyTitle');
+  });
+  const [bodyImage, setBodyImage] = useState(() => {
+    return localStorage.getItem('bodyImage') === 'undefined'
+      ? { title: '', url: '' }
+      : JSON.parse(localStorage.getItem('bodyImage'));
+  });
+  const [bodyButton, setBodyButton] = useState(() => {
+    return localStorage.getItem('bodyButton') === 'undefined'
+      ? { text: '', url: '' }
+      : JSON.parse(localStorage.getItem('bodyButton'));
+  });
+  const [featureItems, setFeatureItems] = useState(() => {
+    return localStorage.getItem('featureItems') === 'undefined'
+      ? []
+      : JSON.parse(localStorage.getItem('featureItems'));
+  });
   const [formattedEmail, setFormattedEmail] = useState('');
-  const [featureItems, setFeatureItems] = useState([]);
   const [fullEditor, setFullEditor] = useState(false);
   const [fullPreview, setFullPreview] = useState(false);
   const [showHTML, setShowHTML] = useState(false);
+
+  // Save state variables to local storage on unmount
+  useEffect(() => {
+    // const savePage = () => {
+    localStorage.setItem('htmlEmail', htmlEmail);
+    localStorage.setItem('bodyTitle', bodyTitle);
+    localStorage.setItem('bodyImage', JSON.stringify(bodyImage));
+    localStorage.setItem('bodyButton', JSON.stringify(bodyButton));
+    localStorage.setItem('featureItems', JSON.stringify(featureItems));
+    // };
+
+    // window.addEventListener('beforeunload', savePage);
+
+    // return () => {
+    //   window.removeEventListener('beforeunload', savePage);
+    // };
+  }, [htmlEmail, bodyTitle, bodyImage, bodyButton, featureItems]);
+
+  // Load state variables from local storage on mount
+  // useEffect(() => {
+  //   localStorage.getItem('htmlEmail')
+  //     ? setHtmlEmail(localStorage.getItem('htmlEmail'))
+  //     : setHtmlEmail('');
+  // localStorage.getItem('bodyTitle')
+  //   ? setBodyTitle(localStorage.getItem('bodyTitle'))
+  //   : setHtmlEmail('');
+  // setBodyTitle(localStorage.getItem('bodyTitle') || '');
+  // localStorage.getItem('bodyImage') &&
+  //   setBodyImage(JSON.parse(localStorage.getItem('bodyImage')));
+  // localStorage.getItem('bodyButton') &&
+  //   setBodyButton(JSON.parse(localStorage.getItem('bodyButton')));
+  // localStorage.getItem('featureItems') &&
+  //   setFeatureItems(JSON.parse(localStorage.getItem('featureItems')));
+  // }, []);
 
   const handleEmailTitleChange = (title) => {
     setBodyTitle(title);
