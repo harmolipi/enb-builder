@@ -13,6 +13,7 @@ const ImageEditor = ({
         <input
           className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
           id="image-title-editor"
+          type="text"
           value={bodyImage.title}
           onChange={(e) => handleChangeImageTitle(e.target.value)}
           placeholder="Enter the title of your image here."
@@ -23,6 +24,7 @@ const ImageEditor = ({
         <input
           className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
           id="image-url-editor"
+          type="url"
           value={bodyImage.url}
           onChange={(e) => handleChangeImageUrl(e.target.value)}
           placeholder="Enter the URL of your image here."

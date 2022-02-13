@@ -77,6 +77,7 @@ const FeatureContainer = ({
             className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
             id={`feature-title-editor-${index}`}
             key={`feature-title-editor-${index}`}
+            type="text"
             value={item.title}
             onChange={(e) => handleFeatureItemTitle(index, e.target.value)}
             placeholder="Enter the title of your feature item here."
@@ -108,6 +109,7 @@ const FeatureContainer = ({
             className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
             id={`feature-image-title-editor-${index}`}
             key={`feature-image-title-editor-${index}`}
+            type="text"
             value={item.image.title}
             onChange={(e) => handleFeatureItemImageTitle(index, e.target.value)}
             placeholder="Enter the title of your feature item's image here."
@@ -122,6 +124,7 @@ const FeatureContainer = ({
             className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
             id={`feature-image-url-editor-${index}`}
             key={`feature-image-url-editor-${index}`}
+            type="url"
             value={item.image.url}
             onChange={(e) => handleFeatureItemImageUrl(index, e.target.value)}
             placeholder="Enter the url of your feature item's image here."
@@ -136,6 +139,7 @@ const FeatureContainer = ({
             className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
             id={`feature-button-text-editor-${index}`}
             key={`feature-button-text-editor-${index}`}
+            type="text"
             value={item.button.text}
             onChange={(e) => handleFeatureItemButtonText(index, e.target.value)}
             placeholder="Enter the text of your feature item's button here."
@@ -150,6 +154,7 @@ const FeatureContainer = ({
             className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800 transition-colors"
             id={`feature-button-url-editor-${index}`}
             key={`feature-button-url-editor-${index}`}
+            type="url"
             value={item.button.url}
             onChange={(e) => handleFeatureItemButtonUrl(index, e.target.value)}
             placeholder="Enter the url of your feature item's button here."

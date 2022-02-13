@@ -13,6 +13,7 @@ const ButtonLink = ({
         <input
           className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
           id="button-url-editor"
+          type="url"
           value={bodyButton.url}
           onChange={(e) => handleChangeButtonUrl(e.target.value)}
           placeholder="Enter the URL of your button here."
@@ -23,6 +24,7 @@ const ButtonLink = ({
         <input
           className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
           id="button-text-editor"
+          type="text"
           value={bodyButton.text}
           onChange={(e) => handleChangeButtonText(e.target.value)}
           placeholder="Enter the text of your button here."
