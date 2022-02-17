@@ -21,14 +21,6 @@ const App = () => {
   const [fullPreview, setFullPreview] = useState(false);
   const [showHTML, setShowHTML] = useState(false);
 
-  useEffect(() => {
-    localStorage.setItem('htmlEmail', JSON.stringify(htmlEmail));
-    localStorage.setItem('bodyTitle', JSON.stringify(bodyTitle));
-    localStorage.setItem('bodyImage', JSON.stringify(bodyImage));
-    localStorage.setItem('bodyButton', JSON.stringify(bodyButton));
-    localStorage.setItem('featureItems', JSON.stringify(featureItems));
-  }, [htmlEmail, bodyTitle, bodyImage, bodyButton, featureItems]);
-
   const handleEmailTitleChange = (title) => {
     setBodyTitle(title);
   };
