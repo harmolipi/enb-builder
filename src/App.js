@@ -21,6 +21,11 @@ const App = () => {
   const [fullPreview, setFullPreview] = useState(false);
   const [showHTML, setShowHTML] = useState(false);
 
+  // Close HTML whenever formattedEmail changes for performance
+  useEffect(() => {
+    if (showHTML) setShowHTML(false);
+  }, [formattedEmail]);
+
   const handleEmailTitleChange = (title) => {
     setBodyTitle(title);
   };
