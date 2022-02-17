@@ -349,6 +349,20 @@ const EmailPreview = ({
             line-height: inherit;
           }
 
+          blockquote {
+            background-color: rgba(247,250,252,1);
+            padding: 0.5rem;
+            border-left-style: solid;
+            border-left-width: 4px;
+            border-left-color: rgba(203,213,224,1);
+          }
+
+          .feature-item blockquote {
+            background-color: rgb(188 193 197);
+            border-left-color: rgb(116 119 122);
+            color: black;
+          }
+
           @media (max-width: 660px) {
             .icons-inner {
               text-align: center;
