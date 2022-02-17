@@ -100,21 +100,6 @@ const FeatureContainer = ({
             placeholder="Enter the description of your feature item here."
           ></ReactQuill>
           <label
-            htmlFor={`feature-image-title-editor-${index}`}
-            className="text-lg text-gray-900"
-          >
-            Image title
-          </label>
-          <input
-            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
-            id={`feature-image-title-editor-${index}`}
-            key={`feature-image-title-editor-${index}`}
-            type="text"
-            value={item.image.title}
-            onChange={(e) => handleFeatureItemImageTitle(index, e.target.value)}
-            placeholder="Enter the title of your feature item's image here."
-          ></input>
-          <label
             htmlFor={`feature-image-url-editor-${index}`}
             className="text-lg text-gray-900"
           >
@@ -130,19 +115,19 @@ const FeatureContainer = ({
             placeholder="Enter the url of your feature item's image here."
           ></input>
           <label
-            htmlFor={`feature-button-text-editor-${index}`}
+            htmlFor={`feature-image-title-editor-${index}`}
             className="text-lg text-gray-900"
           >
-            Button text
+            Image title
           </label>
           <input
             className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
-            id={`feature-button-text-editor-${index}`}
-            key={`feature-button-text-editor-${index}`}
+            id={`feature-image-title-editor-${index}`}
+            key={`feature-image-title-editor-${index}`}
             type="text"
-            value={item.button.text}
-            onChange={(e) => handleFeatureItemButtonText(index, e.target.value)}
-            placeholder="Enter the text of your feature item's button here."
+            value={item.image.title}
+            onChange={(e) => handleFeatureItemImageTitle(index, e.target.value)}
+            placeholder="Enter the title of your feature item's image here."
           ></input>
           <label
             htmlFor={`feature-button-url-editor-${index}`}
@@ -158,6 +143,21 @@ const FeatureContainer = ({
             value={item.button.url}
             onChange={(e) => handleFeatureItemButtonUrl(index, e.target.value)}
             placeholder="Enter the url of your feature item's button here."
+          ></input>
+          <label
+            htmlFor={`feature-button-text-editor-${index}`}
+            className="text-lg text-gray-900"
+          >
+            Button text
+          </label>
+          <input
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
+            id={`feature-button-text-editor-${index}`}
+            key={`feature-button-text-editor-${index}`}
+            type="text"
+            value={item.button.text}
+            onChange={(e) => handleFeatureItemButtonText(index, e.target.value)}
+            placeholder="Enter the text of your feature item's button here."
           ></input>
         </div>
       </div>
