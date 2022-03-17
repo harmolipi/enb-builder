@@ -24,7 +24,7 @@ Also, this is just a good project to practice using what I've been learning.
 Go to https://harmolipi.github.io/enb-builder/ and fill out the fields as needed. Preview will update as you type. You can click to maximize either of those panes, and data will be stored in your browser's localStorage so it's likely not lost if you close the page. When you're ready, click "Show HTML" at the bottom and click to copy that HTML into the body of the email elsewhere.
 
 ## Setup
-```console
+```bash
 npm install
 npm start
 ```
