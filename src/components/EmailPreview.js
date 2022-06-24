@@ -60,13 +60,7 @@ const EmailPreview = ({
                           <div style="font-family: sans-serif">
                             <div style="font-size: 14px; mso-line-height-alt: 16.8px; color: #555555; line-height: 1.2; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;">
                               <p style="margin: 0; font-size: 14px; text-align: center;">
-                                <span style="font-size:22px;color:#fefffe;">
-                                  ${
-                                    featureItems.length > 1
-                                      ? 'Here are more ways you can'
-                                      : "Here's another way you can"
-                                  }
-                                </span>
+                                <span style="font-size:22px;color:#fefffe;">Here's how you can</span>
                               </p>
                             </div>
                           </div>
@@ -113,6 +107,7 @@ const EmailPreview = ({
       ${featureItems
         .map(
           (item) => `
+        ${item.groupId ? `[[?[[S45:${item.groupId}]]::TRUE::` : ''}
         <div class="feature-item" key=${uid(item)}>
           <table
             align="center"
@@ -292,6 +287,7 @@ const EmailPreview = ({
             </tbody>
           </table>
         </div>
+        ${item.groupId ? '::]]' : ''}
       `
         )
         .join('')}
@@ -654,7 +650,7 @@ const EmailPreview = ({
                                   width="100%"
                                 >
                                   <tr>
-                                    <td style="padding-top:20px;">
+                                    <td>
                                       <div style="font-family: sans-serif">
                                         <div
                                           style="font-size: 16px; mso-line-height-alt: 21px; color: #555555; line-height: 1.5; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; text-align: justify;"

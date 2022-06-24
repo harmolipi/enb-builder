@@ -9,6 +9,7 @@ const FeatureContainer = ({
   featureItems,
   addFeatureItem,
   removeFeatureItem,
+  handleFeatureItemGroupId,
   handleFeatureItemTitle,
   handleFeatureItemDescription,
   handleFeatureItemImageTitle,
@@ -67,6 +68,21 @@ const FeatureContainer = ({
           </button>
         </span>
         <div className="pl-4">
+          <label
+            htmlFor={`feature-title-editor-${index}`}
+            className="text-lg text-gray-900"
+          >
+            Group ID (for targeted segments)
+          </label>
+          <input
+            className="w-full h-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-gray-800"
+            id={`feature-title-editor-${index}`}
+            key={`feature-title-editor-${index}`}
+            type="number"
+            value={item.groupId}
+            onChange={(e) => handleFeatureItemGroupId(index, e.target.value)}
+            placeholder="Enter the group ID here (optional)."
+          ></input>
           <label
             htmlFor={`feature-title-editor-${index}`}
             className="text-lg text-gray-900"

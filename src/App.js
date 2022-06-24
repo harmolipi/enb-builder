@@ -58,6 +58,17 @@ const App = () => {
     ]);
   };
 
+  const handleFeatureItemGroupId = (index, groupId) => {
+    setFeatureItems(
+      featureItems.map((featureItem, i) => {
+        if (i === index) {
+          return { ...featureItem, groupId };
+        }
+        return featureItem;
+      })
+    );
+  };
+
   const handleFeatureItemTitle = (index, title) => {
     setFeatureItems(
       featureItems.map((item, i) => {
@@ -160,6 +171,7 @@ const App = () => {
             handleChangeButtonUrl={handleChangeButtonUrl}
             addFeatureItem={addFeatureItem}
             removeFeatureItem={removeFeatureItem}
+            handleFeatureItemGroupId={handleFeatureItemGroupId}
             handleFeatureItemTitle={handleFeatureItemTitle}
             handleFeatureItemDescription={handleFeatureItemDescription}
             handleFeatureItemImageTitle={handleFeatureItemImageTitle}

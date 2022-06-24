@@ -18,6 +18,7 @@ const EmailEditor = ({
   handleChangeButtonText,
   handleChangeButtonUrl,
   featureItems,
+  handleFeatureItemGroupId,
   handleFeatureItemTitle,
   handleFeatureItemDescription,
   handleFeatureItemImageTitle,
@@ -69,6 +70,7 @@ const EmailEditor = ({
       <hr />
       <FeatureContainer
         featureItems={featureItems}
+        handleFeatureItemGroupId={handleFeatureItemGroupId}
         handleFeatureItemTitle={handleFeatureItemTitle}
         handleFeatureItemDescription={handleFeatureItemDescription}
         handleFeatureItemImageTitle={handleFeatureItemImageTitle}
